@@ -17,13 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django_registration.backends.one_step.views import RegistrationView
 from Core import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Core.urls')),
-    path('accounts/register/', RegistrationView.as_view(success_url='/home/'),
-        name='django_registration_register'),
+    path('accounts/register', RegistrationView.as_view(success_url='home/'),
+        name='register'),
     path('accounts/', include('django_registration.backends.one_step.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('login', auth_views.LoginView.as_view(next_page = 'home/'), name = 'login'),
     path('accounts/logout', views.sign_out, name = 'logout'),
 ]
