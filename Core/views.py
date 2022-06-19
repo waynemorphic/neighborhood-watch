@@ -4,4 +4,8 @@ from django.contrib.auth import logout, login
 # Create your views here.
 def sign_out(request):
     logout(request)
-    return render(request, 'home/index.html')
+    return render(request, 'home/home.html')
+
+def home(request):
+    
+    return render(request, 'home/home.html')
