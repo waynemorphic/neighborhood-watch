@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+{{block.super}}
+
+{% include 'navbar.html' %}
+{% load static %}
+<div class="container">
+    <h3 class="text-center">Hospitals</h3>
+    <div class="row">
+        <div class="card mb-3" style="max-width: 576px;">
+            <div class="row g-0">
+                <div class="col">
+                    <img src="{% static 'media/gallery/hos1.jpg' %}" alt="hospital pic"
+                        style="width: 15rem; height: 12rem; padding: 5px;">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <h5 class="card-title">Services</h5>
+                        <ol>
+                            <li>Outpatient Services</li>
+                            <li>Inpatient Services</li>
+                            <li>Emergency Care</li>
+                            <li>Cancer Treatment</li>
+                            <li>Dedicated Pharmacy</li>
+                        </ol>
+                        <footer>
+                            <small>(+254) 712345678</small><br>
+                            <small>mpshah@hospital.mp.ke</small>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 576px;">
+            <div class="row g-0">
+                <div class="col">
+                    <img src="{% static 'media/gallery/hos2.jpeg' %}" alt="hospital pic"
+                        style="width: 15rem; height: 12rem; padding: 5px;">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <h5 class="card-title">Services</h5>
+                        <ol>
+                            <li>Outpatient Care</li>
+                            <li>Inpatient Care</li>
+                            <li>Dentist Center</li>
+                            <li>ENT Services</li>
+                            <li>Dedicated Pharmacy</li>
+                        </ol>
+                        <footer>
+                            <small>(+254) 712987654</small><br>
+                            <small>thenairobihospital@hospital.nh.ke</small>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
