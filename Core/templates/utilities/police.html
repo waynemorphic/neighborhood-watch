@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{{block.super}}
+
+{% include 'navbar.html' %}
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card" style="width: 18rem; margin: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">Central Police Station</h5>
+                    <p class="card-text"><i class="fa-solid fa-phone"></i> Emergency - 911</p>
+                    <p class="card-text"><i class="fa-solid fa-phone"></i> OCPD - 912</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem; margin: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title">Makutano Police Station</h5>
+                    <p class="card-text"><i class="fa-solid fa-phone"></i> Emergency - 911</p>
+                    <p class="card-text"><i class="fa-solid fa-phone"></i> OCPD - 913</p>
+                    <p class="card-text"><i class="fa-solid fa-phone"></i> OCS - 914</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
