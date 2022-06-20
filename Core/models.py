@@ -11,7 +11,7 @@ class Neighborhood(models.Model):
     name = models.CharField(max_length = 250, null = False)
     location = models.CharField(max_length = 250, null = False)
     residents = models.IntegerField(null = False)
-    admin = models.ForeignKey(User, on_delete = models.CASCADE) 
+    admin = models.ForeignKey(User, on_delete = models.CASCADE, null = True) 
     
     def __str__(self):
         return self.name
@@ -43,7 +43,7 @@ class Neighborhood(models.Model):
 class Resident(models.Model):
     '''
     Args:
-        name, id, neighborhood, email
+        name, id_number, neighborhood, email
     '''
     name = models.CharField(max_length = 250, null = False)
     id_number = models.IntegerField(null = False)
@@ -88,3 +88,12 @@ class Business(models.Model):
     def find_business(cls, business_id):
         findings = cls.objects.filter(name__icontains = business_id)
         return findings
+    
+class Post(models.Model):
+    '''
+    Args:
+        username, post, neighborhood
+    '''
+    username = models.ForeignKey(User, on_delete=models.CASCADE, null= False)
+    post = models.TextField()
+    neighborhood = models.ForeignKey(Neighborhood, on_delete=models.CASCADE, null= False)
