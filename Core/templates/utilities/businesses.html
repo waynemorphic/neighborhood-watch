@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{{block.super}}
+
+{% include 'navbar.html' %}
+<div class="container">
+    <h3 class="text-center">Hotel & Catering</h3>
+
+    <div class="card mb-3" style="max-width: 576px;">
+        <div class="row g-0">
+            <div class="col">
+                <img src="{% static 'media/gallery/hotel1.jpg' %}" alt="hotel pic"
+                    style="width: 15rem; height: 12rem; padding: 1rem;">
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <h5 class="card-title">Radisson Hotel</h5>
+                    <ol>
+                        <li>Bed & Breakfast</li>
+                        <li>Conference Services</li>
+                        <li>Outdoor Catering</li>
+                        <li>Gym</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3" style="max-width: 576px;">
+        <div class="row g-0">
+            <div class="col">
+                <img src="{% static 'media/gallery/hotel2.jpg' %}" alt="hotel pic"
+                    style="width: 15rem; height: 12rem; padding: 1rem;">
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <h5 class="card-title">Safari Park Hotel</h5>
+                    <ol>
+                        <li>Dedicated Bar</li>
+                        <li>Bed & Breakfast</li>
+                        <li>Conference Services</li>
+                        <li>Outdoor Catering</li>
+                        <li>Swimming Pool</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3" style="max-width: 576px;">
+        <div class="row g-0">
+            <div class="col">
+                <img src="{% static 'media/gallery/hotel4.jpg' %}" alt="hotel pic"
+                    style="width: 15rem; height: 12rem; padding: 1rem;">
+            </div>
+            <div class="col">
+                <div class="card-body">
+                    <h5 class="card-title">Inti, a Nikei Experience</h5>
+                    <ol>
+                        <li>Dedicated Bar</li>
+                        <li>Sumptuous Meals</li>
+                        <li>Indoor Party Catering</li>
+                        <li>Outdoor Catering</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 class="text-center">SME's</h3>
+    <div class="row">
+        <div class="card mb-3" style="max-width: 576px;">
+            <div class="row g-0">
+                <div class="col">
+                    <img src="{% static 'media/gallery/sme1.jpg' %}" alt="business pic"
+                        style="width: 15rem; height: 12rem; padding: 1rem;">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <h5 class="card-title">Fruits TamTam</h5>
+                        <ol>
+                            <li>Fruits</li>
+                            <li>Vegetables</li>
+                        </ol>
+                        <h6><i class="fa-solid fa-phone"></i> (+254) 712567345</h6>
+                        <h6><i class="fa-solid fa-location-pin"></i> Wakulima Market</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 576px;">
+            <div class="row g-0">
+                <div class="col">
+                    <img src="{% static 'media/gallery/sme2.jpg' %}" alt="hotel pic"
+                        style="width: 15rem; height: 12rem; padding: 1rem;">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <h5 class="card-title">Think Twice Wardrobes</h5>
+                        <h6><i class="fa-solid fa-phone"></i> (+254) 712567245</h6>
+                        <h6><i class="fa-solid fa-location-pin"></i> Stage Kubwa</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 576px;">
+            <div class="row g-0">
+                <div class="col">
+                    <img src="{% static 'media/gallery/sme3.jpg' %}" alt="hotel pic"
+                        style="width: 15rem; height: 12rem; padding: 1rem;">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <h5 class="card-title">Viti Chapchap</h5>
+                        <h6><i class="fa-solid fa-phone"></i> (+254) 712367354</h6>
+                        <h6><i class="fa-solid fa-location-pin"></i> Biashara Stalls</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 576px;">
+            <div class="row g-0">
+                <div class="col">
+                    <img src="{% static 'media/gallery/sme4.jpg' %}" alt="hotel pic"
+                        style="width: 15rem; height: 12rem; padding: 1rem;">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <h5 class="card-title">Cool Cuts Barbershops</h5>
+                        <h6><i class="fa-solid fa-phone"></i> (+254) 712235865</h6>
+                        <h6><i class="fa-solid fa-location-pin"></i> Biashara Stalls</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
