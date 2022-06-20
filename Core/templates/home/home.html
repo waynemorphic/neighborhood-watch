@@ -1,8 +1,29 @@
-{% extends 'base.html' %} 
-{% block content %} 
-{{block.super}} 
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+{{block.super}}
 
 {% include 'navbar.html' %}
-<h3>Hello</h3>
 
-{% endblock %} 
+<div class="container">
+    <div style="margin: 2%;">
+        <h3 class="text-center">Add Your Neighborhood/Estate</h3>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form%}
+            <button type="submit" class="btn btn-success">Add</button><br>
+        </form>
+    </div>
+    {% for new_post in posts %}
+    <div class="card">
+        <div class="card-body">
+           <p>{{new_post.post}}</p> 
+           <small><i class="fa-solid fa-user"></i>  {{new_post.username | capfirst}}</small><br>
+           <small><i class="fa-solid fa-location-pin"></i>  {{new_post.neighborhood}}</small>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
