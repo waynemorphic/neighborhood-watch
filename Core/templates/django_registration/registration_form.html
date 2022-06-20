@@ -6,9 +6,11 @@
 <div class="container">
 
     <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
         {% bootstrap_form form%}
+        <button type="submit" class="btn btn-success">Sign Up</button><br>
     </form>
-    <button type="submit" class="btn btn-success">Sign Up</button><br>
+    
     <small>Have an account? <a href="{% url 'login' %}"> Sign In</a></small>
 </div>
 
