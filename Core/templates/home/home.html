@@ -6,23 +6,35 @@
 {% include 'navbar.html' %}
 
 <div class="container">
-    <div style="margin: 2%;">
-        <h3 class="text-center">Add Your Neighborhood/Estate</h3>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% bootstrap_form form%}
-            <button type="submit" class="btn btn-success">Add</button><br>
-        </form>
-    </div>
-    {% for new_post in posts %}
-    <div class="card">
-        <div class="card-body">
-           <p>{{new_post.post}}</p> 
-           <small><i class="fa-solid fa-user"></i>  {{new_post.username | capfirst}}</small><br>
-           <small><i class="fa-solid fa-location-pin"></i>  {{new_post.neighborhood}}</small>
+    <div class="row" style="margin: 2%;">
+        <div class="col">
+            {% for new_post in posts %}
+            <div class="card" style="margin: 2%;">
+                <div class="card-body">
+                    <p>{{new_post.post}}</p>
+                    <small style="color: green;"><i class="fa-solid fa-user"></i> By {{new_post.username | capfirst}}</small><br>
+                    <small style="color: green;"><i class="fa-solid fa-location-pin"></i> {{new_post.neighborhood}}</small>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col">
+            <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Add Your Neighborhood/Estate</strong>
+                    <small></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% bootstrap_form form%}
+                        <button type="submit" class="btn btn-success">Add</button><br>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-    {% endfor %}
 </div>
 
 

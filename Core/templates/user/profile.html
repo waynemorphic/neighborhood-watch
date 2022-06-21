@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+{{block.super}}
+
+{% include 'navbar.html' %}
+<div class="container">
+    {% for person in residents %}
+    <div class="card" style="width: 18rem; margin: 3%;">
+        <h3 class="text-center">{{person.name | capfirst}}'s Profile</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Username - {{person.name | capfirst}}</li>
+            <li class="list-group-item">Id Number - {{person.id_number}}</li>
+            <li class="list-group-item">Email Address - {{person.email}}</li>
+            <li class="list-group-item">Neighborhood - {{person.neighborhood}}</li>
+        </ul>
+    </div>
+    {% endfor %}
+    <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive" style="margin: 2%;">Update
+        Profile</button>
+
+
+    <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasResponsive"
+        aria-labelledby="offcanvasResponsiveLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-center" id="offcanvasResponsiveLabel">Update Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form method="post" class="mb-0" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form%}
+                <button type="submit" class="btn btn-success">Post</button><br>
+            </form>
+            <p></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

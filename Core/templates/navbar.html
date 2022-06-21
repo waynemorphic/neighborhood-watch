@@ -9,21 +9,22 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg" style="background-color: #D5C5C8; padding-top:1px;">
+	<nav class="navbar navbar-expand-md" style="background-color: black; padding-top:1px; font-family: 'Cormorant Garamond', serif;">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="{% url 'home/' %}"
-				style="font-family: 'Pattaya', sans-serif; letter-spacing: 1px; font-size: 1.2rem; padding: 0.5rem; color:black"><span><i
-						class="fa-solid fa-award fa-xl" style="color:red"></i></span> NEIGHBORHOOD WATCH</a>
+				style="font-family: 'Josefin Slab', serif; letter-spacing: 1.5px; font-size: 1.1rem; padding: 0.5rem; color:ivory"></span> NEIGHBORH<span><i class="fa-solid fa-eye"></i><i class="fa-solid fa-eye"></i></span>D <br>WATCH</a>
 			<button class="navbar-toggler btn btn-outline-success" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
 				aria-label="Toggle navigation" label="Menu">
-				<span><i class="fa-solid fa-circle-chevron-down fa-xl" style="color: white;"></i></span>
+				<span><i class="fa-solid fa-circle-chevron-down fa-xl" style="color: green;"></i></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size:0.8rem;">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size: 1rem;">
 					<li class="nav-item">
-						<a class="nav-link active" href="{% url 'home/' %}" style="color: green;"><span><i
-									class="fa-solid fa-house-user"></i></span> Home</a>
+						<a class="nav-link active" href="{% url 'home/' %}" style="color: green;"> Home</a>
+					</li>					
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'add post' %}" style="color: green;"> Post</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown"
@@ -36,14 +37,10 @@
 						</ul>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{% url 'add post' %}" style="color: green;"> Submit Project</a>
+						<a class="nav-link" href="{% url 'user profile' %}" style="color: green;">My Profile</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{% url 'user profile' %}" style="color: green;"> Member Profile</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{% url 'logout' %}" style="color: red;"><span><i
-									class="fa-solid fa-power-off"></i></span>
+						<a class="nav-link" href="{% url 'logout' %}" style="color: red;">
 							Logout</a>
 					</li>
 				</ul>

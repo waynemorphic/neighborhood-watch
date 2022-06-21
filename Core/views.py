@@ -1,10 +1,11 @@
-from re import T
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from Core.models import Resident, Neighborhood, Business, Post
 from Core.forms import PostForm, ResidentForm, BusinessForm, NeighborhoodForm
 from django.contrib.auth.models import User 
 from django.contrib import messages
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):   
@@ -30,26 +31,50 @@ def home(request):
     context = {"posts": posts, "form": form}
     return render(request, 'home/home.html', context)
 
+@login_required
 def profile(request):
-    current_user = request.user
-    logged_user = User.objects.get(username = current_user)
-    form = ResidentForm()
-    if request.method == 'POST':
-        form = ResidentForm(request.POST)
-        if form.is_valid():
-            logged_user.name = form.save(commit = True)
-            logged_user.id_number = form.cleaned_data['id_number']
-            logged_user.neighborhood = form.cleaned_data['neighborhood']
-            logged_user.email = form.cleaned_data['email']
-            logged_user.save()
-            
-            messages.success(request, 'Profile updated successfully')
-            return redirect(to = 'user profile')
-        else:
-            form = ResidentForm()
-    context = {"form": form}
+    current_user = request.user   
+    try:            
+        logged_user = Resident.objects.filter(name = current_user).first()        
+        residents = Resident.objects.all()
+        print(residents)
+        form = ResidentForm()
+        if request.method == 'POST':
+            form = ResidentForm(request.POST)
+            if form.is_valid():
+                logged_user.name = form.save(commit = True)
+                logged_user.id_number = form.cleaned_data['id_number']
+                logged_user.neighborhood = form.cleaned_data['neighborhood']
+                logged_user.email = form.cleaned_data['email']
+                logged_user.save()
+                
+                messages.success(request, 'Profile set successfully')
+                return redirect(to = 'user profile')
+            print(User)
+            print('hi')
+        # resident_form = ResidentForm(instance = request.user.resident)
+    except ObjectDoesNotExist:
+        logged_in_user = User.objects.get(id = current_user.id)
+        print(logged_in_user)
+        
+        resident_form = ResidentForm()
+        if request.method == 'POST':
+            resident_form = ResidentForm(request.POST)
+            if resident_form.is_valid():
+                resident = resident_form.save(commit = False)
+                resident.user = logged_in_user
+                print(resident)
+                resident.save()
+                
+                messages.success(request, 'Profile set successfully')
+                return redirect(to = 'user profile')                
+                
+        
+    residents = Resident.objects.all()
+    context = {"form": form, "residents": residents}
     return render(request, 'user/profile.html', context)
 
+@login_required
 def new_post(request):
     form = PostForm()
     current_user = request.user
@@ -63,7 +88,7 @@ def new_post(request):
             logged_in_user.post = form.cleaned_data['post']
             logged_in_user.save()
             
-            messages.success = 'Post added successfully'
+            messages.success(request, 'Post added successfully') 
             return redirect(to = 'home/')          
     else:
         form = PostForm()       
@@ -84,4 +109,5 @@ def business(request):
 
 def sign_out(request):
     logout(request)
-    return render(request, 'home/home.html')
+    
+    return redirect( to = 'home/')
