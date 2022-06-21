@@ -2,11 +2,11 @@
 A  web application that allows you to be in the loop about everything happening in your neighborhood.
 
 ## Description
-<img src='media/Screenshot from 2022-06-15 23-03-50.png'>
+<img src='static/media/images/readmess.png'>
 While there has been some progress towards gender equality and women empowerment, women are still not fully empowered in technology and leadership. Women are the change agents and champions of their communities. When empowered they can contribute to important development goals and to positive change which will in turn spur economic growth for Kenya and Africa. Starrs aims to bridge the gap by showcasing and broadcasting the inspiring, cool, creative and downright unusual of the Females in Tech space. 
 <br/>
 
-<a href="https://.herokuapp.com/">Click to View</a>
+<a href="https://git.heroku.com/neighborhoodwatchngiway.git">Click to View</a>
 
 ## User stories
 A user of the application should be able to:
