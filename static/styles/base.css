@@ -1,0 +1,79 @@
+.img {
+    margin: 0 auto;
+    display: block;
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  body{
+	font-family: font-primary;
+	font-size: 16px;
+	line-height: 1.8;
+	font-weight: normal;
+}
+#sign-btn{
+    background-color: #305a08;
+    padding: 1em;
+    border: none;
+}
+
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: font-primary;
+	color: black;
+}
+.ftco-section{
+	padding: 1em 0;
+}
+.ftco-no-pt{
+	padding-top: 0;
+}
+.ftco-no-pb{
+	padding-bottom: 0;
+}
+heading-section{
+	font-size: 28px;
+	color: black;
+}
+
+.wrap{
+	width: 100%;
+	overflow: hidden;
+	background-color: white;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 10px 34px -15px rgba(0,0,0,0.24);
+	-moz-box-shadow: 0px 10px 34px -15px rgba(0,0,0,0.24);
+	box-shadow: 0px 10px 34px -15px rgba(0,0,0,0.24);
+}
+.login-wrap{
+	width: 50%;
+}
+
+.login-wrap{
+	position: relative;
+	background: white
+}
+.social-media{
+	position: relative;
+	width: 100%;
+	
+}
+.social-icon{
+		display: block;
+		width: 40px;
+		height: 40px;
+		background: transparent;
+		border: 1px solid rgba(0,0,0,.05);
+		font-size: 16px;
+		margin-right: 5px;
+		border-radius: 50%;
+}
+.social-icon:hover, .social-icon:focus{
+			background-color: white;
+}
+

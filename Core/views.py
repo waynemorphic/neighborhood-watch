@@ -122,7 +122,7 @@ def search_results(request):
     neighborhoods = Neighborhood.objects.all()
     if request.method == 'GET':
         name = request.GET.get('name')
-        results = Neighborhood.objects.filter(name__contains=name).all()
+        results = Neighborhood.objects.filter(name__icontains=name).all()
         print(results)
         message = f'name'
         context = {
