@@ -95,8 +95,45 @@ def new_post(request):
     context = {"form": form} 
     return render (request, 'home/new_post.html', context)
 
+
+
+def new_neighborhood(request):
+    form = NeighborhoodForm()
+    current_user = request.user
+    if request.method == 'POST':
+        form = NeighborhoodForm(request.POST)
+        logged_in_user = User.objects.get(username = current_user)
+        if form.is_valid():
+            logged_in_user = form.save(commit = True)
+            logged_in_user.name = form.cleaned_data['name']
+            logged_in_user.location = form.cleaned_data['location']
+            logged_in_user.save()
+            
+            messages.success(request, 'Neighborhood added successfully') 
+            return redirect(to = 'home/')          
+    else:
+        form = NeighborhoodForm()       
+    context = {"form": form} 
+    return render (request, 'home/new_hood.html', context)
+
+
+
 def search_results(request):
-    return render(request, 'home/search.html')
+    neighborhoods = Neighborhood.objects.all()
+    if request.method == 'GET':
+        name = request.GET.get('name')
+        results = Neighborhood.objects.filter(name__icontains=name).all()
+        print(results)
+        message = f'name'
+        context = {
+            'message': message, 
+            'results': results
+        }
+        return render(request, 'home/search.html', context)
+    else:
+        messsage = 'No results found for the specified title'
+        
+    return render(request, 'home/search.html', {'messsage': messages})
 
 def police(request):
     return render(request, 'utilities/police.html')
