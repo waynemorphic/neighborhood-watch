@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # third party
     'bootstrap5',
     'fontawesomefree',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -84,8 +85,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'watch',
-        'USER': 'wayne',
-        'PASSWORD': '123'
+        'USER': 'ngina',
+        'PASSWORD': 'Postgres'
     }
 }
 
