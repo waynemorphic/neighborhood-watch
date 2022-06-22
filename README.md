@@ -67,10 +67,13 @@ If you find a bug, kindly open an issue here by including your search query and 
 If you'd like to request a new function, feel free to do so by opening an issue here. Please include sample queries and their corresponding results.
 
 
-### Contact Me
+### Contact Us
 Visit my website [here](https://www.nginagitau.com/).
 If you have any questions or comments, 
-conatct me at Nginagitau11@outlook.com
+Contact me at:
+  Nginagitau11@outlook.com
+  kirimiwayne@gmail.com
+
 
 ### LICENSE 
 MIT License
