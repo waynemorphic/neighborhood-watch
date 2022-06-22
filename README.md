@@ -9,7 +9,7 @@ A  web application that allows you to be in the loop about everything happening 
 While there has been some progress towards gender equality and women empowerment, women are still not fully empowered in technology and leadership. Women are the change agents and champions of their communities. When empowered they can contribute to important development goals and to positive change which will in turn spur economic growth for Kenya and Africa. Starrs aims to bridge the gap by showcasing and broadcasting the inspiring, cool, creative and downright unusual of the Females in Tech space. 
 <br/>
 
-<a href="https://neighborhoodwatchngiway.herokuapp.com/">Click to View</a>
+<a href="https://git.heroku.com/neighborhoodwatchngiway.git">Click to View</a>
 
 <br>
 
@@ -67,12 +67,12 @@ If you find a bug, kindly open an issue here by including your search query and 
 If you'd like to request a new function, feel free to do so by opening an issue here. Please include sample queries and their corresponding results.
 
 
-### Contact Us
+### Contact 
 Visit my website [here](https://www.nginagitau.com/).
 If you have any questions or comments, 
-Contact me at:
-  Nginagitau11@outlook.com
-  kirimiwayne@gmail.com
+Contact Us at:
+  <li>Nginagitau11@outlook.com</li>
+  <li>kirimiwayne@gmail.com</li>
 
 
 ### LICENSE 
